@@ -1,4 +1,4 @@
-# EduSpark
+# Global Innovators
 
 ### Plataforma em desenvolvimento
 
@@ -13,20 +13,30 @@ Aplicacao para gerar material de estudo a partir de PDF:
 - Backend: Express
 - Upload de PDF: Multer
 - Extracao de texto: pdf-parse
-- IA: OpenAI API (com fallback mock sem chave)
+- IA: DeepSeek ou Gemini (com fallback mock sem chave)
 
 ## 1. Configurar variaveis de ambiente
 
-1. Copie [ .env.example ] para um arquivo chamado `.env` na raiz.
+1. Crie um arquivo `.env` na raiz com uma destas opcoes.
 2. Preencha sua chave:
 
 ```env
-OPENAI_API_KEY=sua_chave_real
-OPENAI_MODEL=gpt-4o-mini
+# Opcao A (recomendada para sua chave atual)
+AI_PROVIDER=deepseek
+DEEPSEEK_API_KEY=sua_chave_deepseek
+DEEPSEEK_MODEL=deepseek-chat
+AI_PROCESSING_DELAY_MS=4000
+
+# Opcao B (Gemini)
+# AI_PROVIDER=gemini
+# GEMINI_API_KEY=sua_chave_gemini
+# GEMINI_MODEL=gemini-2.0-flash
+
 PORT=8787
 ```
 
-Se `OPENAI_API_KEY` nao for informada, o backend responde com modo mock (para voce testar o fluxo sem custo).
+Se a chave da IA nao for informada ou a cota estourar, o backend responde com modo mock (para voce testar o fluxo sem custo).
+Voce pode ajustar `AI_PROCESSING_DELAY_MS` para aguardar alguns milissegundos antes da chamada da IA, por exemplo 4000 (4 segundos).
 
 ## 2. Instalar dependencias
 
@@ -55,7 +65,7 @@ Isso sobe:
 ## Endpoints da API
 
 - `GET /api/health`
-	- Retorna status e se existe chave configurada.
+	- Retorna status, provider de IA detectado e se existe chave configurada.
 
 - `POST /api/study-material`
 	- `multipart/form-data`

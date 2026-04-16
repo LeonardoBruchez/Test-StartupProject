@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>EduSpark</h1>
+        <h1>Global Innovators</h1>
         <p className="subtitle">Transforme seus planos de aula em resumos e provas inteligentes em segundos com o poder da IA.</p>
       </header>
 
@@ -284,14 +284,14 @@ function App() {
               )}
             </div>
             <p style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-              Gerado em {result.timestamp} • EduSpark AI
+              Gerado em {result.timestamp} • Global Innovators
             </p>
           </div>
         )}
       </main>
 
       <footer style={{ marginTop: 'auto', padding: '2rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-        &copy; 2026 EduSpark - Revolucionando o aprendizado acadêmico.
+        &copy; 2026 Global Innovators- Revolucionando o aprendizado acadêmico.
       </footer>
     </div>
   );
