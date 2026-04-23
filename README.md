@@ -72,3 +72,11 @@ Isso sobe:
 - Se `AI_FORCE_MOCK=true`, a API retorna conteudo mock sem chamar Gemini.
 - Se a cota da Gemini estourar, a API tambem retorna mock para manter o fluxo de testes.
 - PDFs escaneados (imagem) podem precisar de OCR para melhor extracao de texto.
+
+## Aviso sobre uso de IA
+
+Algumas partes deste projeto foram desenvolvidas com apoio de IA devido a limitacoes de conhecimento tecnico no momento do desenvolvimento.
+
+Todo o conteudo foi revisado com responsabilidade pelos autores, que assumem integralmente as decisoes de implementacao e os resultados obtidos.
+
+Este projeto tem finalidade exclusivamente academica.
